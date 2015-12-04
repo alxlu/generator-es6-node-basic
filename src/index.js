@@ -42,7 +42,7 @@ module.exports = Base.extend({
       jsonContent[entry] = 'x';
       delete jsonContent[entry];
     });
-    var projectName = this.name.trim().toLowerCase().replace(/ /g, '-');
+    const projectName = this.name.trim().toLowerCase().replace(/ /g, '-');
     jsonContent.name = projectName;
     jsonContent.author = this.author.trim();
     this.fs.writeJSON(this.destinationPath('package.json'), jsonContent);
