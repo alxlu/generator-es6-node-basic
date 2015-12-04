@@ -31,6 +31,7 @@ module.exports = Base.extend({
   copyTemplate() {
     const mainDir = path.join(require.resolve('es6-node-base/package.json'), '../');
     this.fs.copy(this.templatePath(mainDir) + '/**/{*,.*}', this.destinationPath(), { dot: true });
+    this.fs.move(this.destinationPath('.npmignore'), this.destinationPath('.gitignore'));
     const jsonContent = this.fs.readJSON(this.destinationPath('package.json'));
     const unusedFields = [
       'gitHead',
@@ -49,6 +50,6 @@ module.exports = Base.extend({
   },
 
   install() {
-    if (this.deps) this.installDependencies({bower: false});
+    if (this.deps) this.installDependencies({ bower: false });
   }
 });
