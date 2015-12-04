@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "files": [
+    "app"
+  ],
   "scripts": {
-    "start": "./node_modules/.bin/babel ./src --out-dir ./dist && node ./dist/index.js",
-    "watch": "./node_modules/.bin/babel ./src --out-dir ./dist --watch --source-maps",
+    "start": "./node_modules/.bin/babel ./src --out-dir ./app && node ./app/index.js",
+    "watch": "./node_modules/.bin/babel ./src --out-dir ./app --watch --source-maps",
     "lint": "./node_modules/.bin/eslint ./src",
-    "debug": "./node_modules/.bin/babel ./src --out-dir ./dist && node-debug ./dist/index.js"
+    "debug": "./node_modules/.bin/babel ./src --out-dir ./app && node-debug ./app/index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.1.18",
@@ -16,5 +19,9 @@
     "eslint-config-airbnb": "^1.0.0"
   },
   "author": "Alex Lu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "es6-node-base": "git://github.com/MicrosoftEdge/es6-node-base",
+    "yeoman-generator": "^0.21.1"
+  }
 }
