@@ -21,7 +21,7 @@
   "author": "Alex Lu",
   "license": "ISC",
   "dependencies": {
-    "es6-node-base": "git://github.com/MicrosoftEdge/es6-node-base",
+    "es6-node-base": "git://github.com/alxlu/es6-node-base",
     "yeoman-generator": "^0.21.1"
   }
 }
